@@ -7,12 +7,6 @@
 
 import Foundation
 
-// DateFormatting.swift
-public protocol DateFormatting {
-    func formatDate(_ dateString: String) -> String
-}
-
-// DateFormatterService.swift
 public class DateFormatterService: DateFormatting {
     public init() {}
     

@@ -6,19 +6,16 @@
 //
 
 import Foundation
-
-public class DateFormatterService: DateFormatting {
+  
+public final class CustomDateFormatter: CustomDateFormatterProtocol {
     public init() {}
-    
-    public func formatDate(_ dateString: String) -> String {
+    public func formattedDate(from dateString: String, inputFormat: String = "yyyy-MM-dd'T'HH:mm:ssZ", outputFormat: String = "EEEE, d MMMM yyyy") -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        
-        if let date = dateFormatter.date(from: dateString) {
-            dateFormatter.dateFormat = "EEEE, d MMM yyyy"
-            return dateFormatter.string(from: date)
-        } else {
-            return dateString
+        dateFormatter.dateFormat = inputFormat
+        guard let date = dateFormatter.date(from: dateString) else {
+            return "Unknown Date"
         }
+        dateFormatter.dateFormat = outputFormat
+        return dateFormatter.string(from: date)
     }
 }

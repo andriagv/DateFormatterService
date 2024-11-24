@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol DateFormatting {
-    func formatDate(_ dateString: String) -> String
+public protocol CustomDateFormatterProtocol {
+    func formattedDate(from: String, inputFormat: String, outputFormat: String) -> String
 }

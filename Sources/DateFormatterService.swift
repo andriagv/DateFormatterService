@@ -19,7 +19,7 @@ public enum DateFormats: String {
     case iso8601 = "yyyy-MM-dd'T'HH:mm:ssZ"
     case detailedDate = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     
-    var format: String {
+    public var format: String {
         return self.rawValue
     }
 }
